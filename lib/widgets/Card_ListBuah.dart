@@ -3,18 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../model/buah.dart';
+
 class CardBuah extends StatelessWidget {
-  const CardBuah({super.key});
+  final Buah buah;
+  const CardBuah({super.key, required this.buah});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 100,
+        margin: const EdgeInsets.only(right: 4),
+        height: 130,
         width: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           image: DecorationImage(
-              image: AssetImage("assets/images/Grapes.jpg"), fit: BoxFit.cover),
+              image: AssetImage(buah.imageAsset!), fit: BoxFit.cover),
         ));
   }
 }

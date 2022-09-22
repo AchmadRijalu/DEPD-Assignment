@@ -7,7 +7,7 @@ class Buah {
 }
 
 var buahList = [
-  Buah(name: "Anggur", imageAsset: "assets/image/Grapes.jpg"),
+  Buah(name: "Anggur", imageAsset: "assets/images/Grapes.jpg"),
   Buah(name: "Strawberry", imageAsset: "assets/images/Strawberries.jpg"),
   Buah(name: "Semangka", imageAsset: "assets/images/Watermelon.jpg"),
   Buah(name: "Apricots", imageAsset: "assets/images/Apricots.jpg"),

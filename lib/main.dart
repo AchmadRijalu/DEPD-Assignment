@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:week2dped_assignment/common/styles.dart';
 import 'package:week2dped_assignment/views/main_content.dart';
 
+import 'model/buah.dart';
+
 void main() {
   runApp(const MyApp());
 }
