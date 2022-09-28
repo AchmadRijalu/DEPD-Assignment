@@ -12,7 +12,7 @@ class CardBuah extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(right: 4),
+        margin: const EdgeInsets.only(right: 8),
         height: 130,
         width: 100,
         decoration: BoxDecoration(

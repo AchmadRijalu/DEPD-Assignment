@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week2dped_assignment/common/styles.dart';
+import 'package:week2dped_assignment/views/form_page.dart';
 import 'package:week2dped_assignment/views/main_content.dart';
 
 import 'model/buah.dart';
@@ -23,8 +24,14 @@ class MyApp extends StatelessWidget {
               onPrimary: secondaryColor,
               secondary: secondaryColor),
           appBarTheme: AppBarTheme(elevation: 0),
+          scrollbarTheme: const ScrollbarThemeData()
+              .copyWith(thumbColor: MaterialStateProperty.all(primaryColor)),
           textTheme: myTextTheme),
-      home: const MainContent(),
+      initialRoute: MainContent.routeNames,
+      routes: {
+        MainContent.routeNames: (context) => MainContent(),
+        FormPage.routeNames: (context) => FormPage()
+      },
     );
   }
 }
