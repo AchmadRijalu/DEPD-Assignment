@@ -32,9 +32,10 @@ class _MainContentState extends State<MainContent> {
             .headline6!
             .copyWith(color: Colors.white, fontWeight: FontWeight.w600),
       )),
-      body: SingleChildScrollView(
-        physics: AlwaysScrollableScrollPhysics(),
-        child: Container(
+      body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          // height: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -44,76 +45,99 @@ class _MainContentState extends State<MainContent> {
               secondaryColor,
             ],
           )),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Stack(
-              children: [
-                Container(
-                    width: double.infinity,
-                    height: 220,
-                    child: ClipRRect(
-                      child: Image.asset(
-                        "assets/images/Orange.jpg",
-                        fit: BoxFit.cover,
-                      ),
-                    )),
-                SafeArea(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Container(
+          child: Column(children: [
+            Flexible(
+                flex: 5,
+                child: Container(
+                  color: Colors.black,
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white70),
-                        child: FavoriteButton(),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  "assets/images/Orange.jpg",
+                                ))),
+
+                        // ClipRRect(
+                        //   child: Image.asset(
+                        //     "assets/images/Orange.jpg",
+                        //     fit: BoxFit.cover,
+                        //   ),
+                        // )
                       ),
-                    )
-                  ],
-                ))
-              ],
-            ),
-            Container(
-              padding: const EdgeInsets.all(5),
-              color: Colors.black12,
-              height: 100,
-              child: Flexible(
-                child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: ((context, index) {
-                    final Buah buah = buahList[index];
-                    return CardBuah(buah: buah);
-                  }),
-                  itemCount: buahList.length,
+                      SafeArea(
+                          child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: Colors.white70),
+                              child: FavoriteButton(),
+                            ),
+                          )
+                        ],
+                      ))
+                    ],
+                  ),
+                )),
+            Flexible(
+              flex: 3,
+              child: Container(
+                padding: const EdgeInsets.all(5),
+                // color: Colors.blue,
+                height: 100,
+                child: Flexible(
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemBuilder: ((context, index) {
+                      final Buah buah = buahList[index];
+                      return CardBuah(buah: buah);
+                    }),
+                    itemCount: buahList.length,
+                  ),
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child:
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(
-                  "Selamat Datang di Halaman Buah",
-                  style: Theme.of(context)!
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontWeight: FontWeight.w800),
-                )
-              ]),
+            Flexible(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "Selamat Datang di Halaman Buah",
+                    style: Theme.of(context)!
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontWeight: FontWeight.w800),
+                  )
+                ]),
+              ),
             ),
-            Container(
-                height: 350,
-                child: Column(
-                  children: [
-                    Flexible(
+            Flexible(
+                flex: 8,
+                fit: FlexFit.tight,
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  // color: Colors.amber,
+                  child: Column(
+                    children: [
+                      Container(
+                          child: Expanded(
+                              child: SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
                         child: Container(
-                      padding: const EdgeInsets.all(12),
-                      child: Scrollbar(
-                        child: SingleChildScrollView(
-                            physics: BouncingScrollPhysics(),
+                            width: double.infinity,
+                            padding: const EdgeInsets.all(12),
                             child: Column(
                               children: [
                                 Container(
@@ -217,13 +241,11 @@ class _MainContentState extends State<MainContent> {
                                 )
                               ],
                             )),
-                      ),
-                    )),
-                  ],
-                ))
-          ]),
-        ),
-      ),
+                      )))
+                    ],
+                  ),
+                )),
+          ])),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: primaryColor,
         onPressed: (() {
