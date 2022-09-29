@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:week2dped_assignment/common/styles.dart';
-import 'package:week2dped_assignment/views/form_page.dart';
-import 'package:week2dped_assignment/views/main_content.dart';
+
+import 'package:week2dped_assignment/views/pages.dart';
 
 import 'model/buah.dart';
 

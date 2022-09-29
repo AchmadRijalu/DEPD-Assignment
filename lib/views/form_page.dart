@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:week2dped_assignment/common/styles.dart';
-import 'package:week2dped_assignment/views/main_content.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/src/widgets/container.dart';
+// import 'package:flutter/src/widgets/framework.dart';
+// import 'package:week2dped_assignment/common/styles.dart';
+// import 'package:week2dped_assignment/views/main_content.dart';
+
+part of 'pages.dart';
 
 class FormPage extends StatefulWidget {
   static const routeNames = "Form Page";
